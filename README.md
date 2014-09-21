@@ -19,7 +19,7 @@ It includes a KeyGenerator Util to generate more secure keys using seed, random 
  * IkszorException (all others)
  
 ##Version info##
- * Version : 1.0
+ * Version : 1.1
  * Author: Gerviba
  * License : Creative Commons 4.0 (BY-NC-SA)
  

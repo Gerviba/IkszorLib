@@ -5,16 +5,17 @@
  * @date 2014-09-21
  * 
  * You are free to:
- *	Share —			Copy and redistribute the material in any medium or format
- *	Adapt — 		Remix, transform, and build upon the material
+ *	Share — Copy and redistribute the material in any medium or format.
+ *	Adapt — Remix, transform, and build upon the material.
  *	
  * Under the following terms:
- *	Attribution — 	You must give appropriate credit, provide a link to the license, and indicate 
- *					if changes were made. You may do so in any reasonable manner, but not in any way that suggests 
- *					the licensor endorses you or your use.
+ *	Attribution — You must give appropriate credit, provide a link to the license, and indicate 
+ *	if changes were made. You may do so in any reasonable manner, but not in any way that suggests 
+ *	the licensor endorses you or your use.
  *	NonCommercial — You may not use the material for commercial purposes.
- *	ShareAlike — 	If you remix, transform, or build upon the material, you must 
- *					distribute your contributions under the same license as the original.
+ *	ShareAlike — If you remix, transform, or build upon the material, you must 
+ *	distribute your contributions under the same license as the original.
+ *
  * @see http://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
  */
 package hu.Gerviba.IkszorLib;
@@ -196,6 +197,17 @@ public class IkszorSecureBinaryObject {
 	}
 
 	/**
+	 * Convert to IkszorSecureObject
+	 * @return The converted Object
+	 * @throws IkszorConvertException
+	 */
+	public IkszorSecureObject toIkszorSecureObject() throws IkszorConvertException {
+		return new IkszorSecureObject(IkszorManager.booleanArray2String(encodedValue),
+				IkszorManager.booleanArray2String(symmetricKey),
+				IkszorManager.booleanArray2String(decodedValue));
+	}
+	
+	/**
 	 * Generate toString() value (for debugging)
 	 * @return The values of this Object
 	 */
@@ -203,9 +215,9 @@ public class IkszorSecureBinaryObject {
 	public String toString() {
 		return "IkszorSecureBinaryObject " +
 				"[encodedValue=" + IkszorManager.booleanArray2BinaryString(encodedValue) + "["+(encodedValue != null ? encodedValue.length : "null")+"]" +
-				",\r\n symmetricKey=" + IkszorManager.booleanArray2BinaryString(symmetricKey) + "["+(symmetricKey != null ? symmetricKey.length : "null")+"]" +
-				",\r\n decodedValue=" + IkszorManager.booleanArray2BinaryString(decodedValue) + "["+(decodedValue != null ? decodedValue.length : "null")+"]" +
-				",\r\n isEncoded=" + isEncoded +
+				", symmetricKey=" + IkszorManager.booleanArray2BinaryString(symmetricKey) + "["+(symmetricKey != null ? symmetricKey.length : "null")+"]" +
+				", decodedValue=" + IkszorManager.booleanArray2BinaryString(decodedValue) + "["+(decodedValue != null ? decodedValue.length : "null")+"]" +
+				", isEncoded=" + isEncoded +
 				", isDecoded=" + isDecoded + "]";
 	}
 
